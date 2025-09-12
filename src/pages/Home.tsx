@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { 
   ArrowRight, 
   Shield,
@@ -15,7 +16,8 @@ import {
   BarChart3,
   Zap,
   Star,
-  Menu
+  Menu,
+  X
 } from 'lucide-react';
 import heroImage from '@/assets/hero-image.jpg';
 import Logo from '@/components/Logo';
@@ -32,6 +34,8 @@ const serviceImages = {
 };
 
 const Home = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const services = [
     {
       image: serviceImages.construction,
@@ -127,12 +131,55 @@ const Home = () => {
             </nav>
 
             {/* Mobile Menu Button */}
-            <Button variant="ghost" size="sm" className="lg:hidden text-gray-700 hover:bg-gray-100 h-8 w-8 p-0">
-              <Menu className="h-5 w-5" />
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className="lg:hidden text-gray-700 hover:bg-gray-100 h-8 w-8 p-0"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
         </div>
       </header>
+
+      {/* Mobile Menu Dropdown */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-white border-b border-gray-200 shadow-lg">
+          <div className="container-custom px-4 py-4">
+            <nav className="flex flex-col space-y-4">
+              <Link 
+                to="/about" 
+                className="text-base text-gray-700 hover:text-amber-600 transition-colors font-medium py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link 
+                to="/services" 
+                className="text-base text-gray-700 hover:text-amber-600 transition-colors font-medium py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Services
+              </Link>
+              <Link 
+                to="/who-we-are" 
+                className="text-base text-gray-700 hover:text-amber-600 transition-colors font-medium py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Who We Are
+              </Link>
+              <Link 
+                to="/contact" 
+                className="text-base text-gray-700 hover:text-amber-600 transition-colors font-medium py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
+              </Link>
+            </nav>
+          </div>
+        </div>
+      )}
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">

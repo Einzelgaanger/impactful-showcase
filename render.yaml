@@ -2,10 +2,12 @@ services:
   - type: web
     name: eliteadvisoryltd
     env: node
-    buildCommand: npm ci && npm run build
+    buildCommand: npm install && npm run build
     startCommand: npm run preview
     envVars:
       - key: NODE_VERSION
         value: 20
       - key: NPM_CONFIG_PACKAGE_MANAGER
         value: npm
+      - key: NPM_CONFIG_ENGINE_STRICT
+        value: false

@@ -73,8 +73,8 @@ const About = () => {
         {/* Background Image */}
         <div className="absolute inset-0 -z-10">
           <img 
-            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1926&q=80" 
-            alt="Professional business meeting"
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1926&q=80" 
+            alt="Professional business team"
             className="w-full h-full object-cover"
             loading="eager"
           />

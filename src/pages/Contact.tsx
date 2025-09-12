@@ -72,8 +72,8 @@ const Contact = () => {
         <section className="relative py-16 md:py-24 overflow-hidden text-white">
           <div className="absolute inset-0 -z-10">
             <img 
-              src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1926&q=80" 
-              alt="Professional business meeting"
+              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1926&q=80" 
+              alt="Professional office environment"
               className="w-full h-full object-cover"
               loading="eager"
             />

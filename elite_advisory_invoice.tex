@@ -1,0 +1,250 @@
+\documentclass[11pt,a4paper]{article}
+% ========== Preamble ==========
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{sourcesanspro}
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=2.5cm, right=2.5cm}
+
+% Color definitions
+\usepackage{xcolor}
+\definecolor{primaryBlue}{HTML}{0F172A}
+\definecolor{accentBlue}{HTML}{3B82F6}
+\definecolor{successGreen}{HTML}{10B981}
+\definecolor{warningAmber}{HTML}{F59E0B}
+\definecolor{lightGray}{HTML}{F8FAFC}
+\definecolor{mediumGray}{HTML}{64748B}
+
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{array}
+
+% Enhanced section formatting
+\titleformat{\section}{\color{primaryBlue}\sffamily\LARGE\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\color{accentBlue}\sffamily\large\bfseries}{\thesubsection}{1em}{}
+
+% Header/Footer styling
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{\textsf{\color{mediumGray}\small Professional Web Development Services}}
+
+% Custom boxes
+\newtcolorbox{headerbox}{
+    enhanced,
+    colback=primaryBlue,
+    colframe=primaryBlue,
+    boxrule=0pt,
+    arc=8pt,
+    left=15pt,
+    right=15pt,
+    top=15pt,
+    bottom=15pt
+}
+
+\newtcolorbox{detailsbox}{
+    enhanced,
+    colback=lightGray,
+    colframe=accentBlue!30,
+    boxrule=1pt,
+    arc=6pt,
+    left=12pt,
+    right=12pt,
+    top=12pt,
+    bottom=12pt
+}
+
+\newtcolorbox{paymentbox}{
+    enhanced,
+    colback=white,
+    colframe=successGreen,
+    boxrule=2pt,
+    arc=6pt,
+    left=15pt,
+    right=15pt,
+    top=12pt,
+    bottom=12pt,
+    drop shadow southeast
+}
+
+% ========== Document ==========
+\begin{document}
+
+% ===== Invoice Header =====
+\begin{headerbox}
+    \begin{center}
+        {\Huge\color{white}\textbf{INVOICE}} \\
+        \vspace{0.3cm}
+        {\Large\color{white}ALFRED MULINGE MAWEU} \\
+        \vspace{0.2cm}
+        {\large\color{white!80}Professional Web Development Services}
+    \end{center}
+\end{headerbox}
+
+\vspace{0.5cm}
+
+% ===== Invoice Number & Date =====
+\begin{center}
+    {\LARGE\color{primaryBlue}\textbf{Invoice \#EAL-2025-\the\month\the\day-001}} \\
+    \vspace{0.2cm}
+    {\large\color{mediumGray}Issued: \today}
+\end{center}
+
+\vspace{0.8cm}
+
+% ===== Client & Service Provider Details =====
+\begin{detailsbox}
+    \begin{tabularx}{\textwidth}{@{}X@{\hspace{2cm}}X@{}}
+        \textbf{\color{primaryBlue}SERVICE PROVIDER:} & \textbf{\color{primaryBlue}BILLED TO:} \\[0.3cm]
+        
+        \textbf{Alfred Mulinge Maweu} & \textbf{Elite Advisory Limited} \\
+        Software Developer & Management Consultancy Company \\
+        Professional Web Development & Nairobi, Kenya \\[0.5cm]
+        
+        \\
+        \textbf{Currency:} Kenyan Shillings (KES) \\
+    \end{tabularx}
+\end{detailsbox}
+
+\vspace{1cm}
+
+% ===== Service Details =====
+\section*{\color{primaryBlue}SERVICE DETAILS}
+
+\begin{tabularx}{\textwidth}{@{}p{1cm}Xrrr@{}}
+    \toprule
+    \textbf{\#} & \textbf{Description of Services} & \textbf{Qty} & \textbf{Unit Price (KES)} & \textbf{Amount (KES)} \\
+    \midrule
+     1 & \parbox[t]{8cm}{
+         \textbf{Professional Website Development} \\
+         \vspace{0.2cm}
+         \textit{Scope of Work:} \\
+         • Complete website design and development \\
+         • Responsive mobile-first design \\
+         • Modern React/TypeScript implementation \\
+         • Professional UI/UX with Tailwind CSS \\
+         • Contact forms and interactive elements \\
+         • SEO optimization and performance tuning
+     } & 1 & 5,000 & 5,000 \\
+     
+     2 & \parbox[t]{8cm}{
+         \textbf{Domain Purchase \& Registration} \\
+         \vspace{0.2cm}
+         \textit{Includes:} \\
+         • eliteadvisoryltd.com domain registration \\
+         • DNS configuration and management \\
+         • Domain privacy protection \\
+         • 1-year domain registration
+     } & 1 & 1,000 & 1,000 \\
+     
+     3 & \parbox[t]{8cm}{
+         \textbf{Website Hosting \& Deployment} \\
+         \vspace{0.2cm}
+         \textit{Includes:} \\
+         • Professional hosting setup on Render.com \\
+         • SSL certificate installation \\
+         • CDN configuration for global performance \\
+         • Automated deployment pipeline \\
+         • 1-year hosting service
+     } & 1 & 1,500 & 1,500 \\
+     
+     4 & \parbox[t]{8cm}{
+         \textbf{Database Setup \& Configuration} \\
+         \vspace{0.2cm}
+         \textit{Includes:} \\
+         • Supabase database setup \\
+         • Database schema design \\
+         • API configuration \\
+         • Data security implementation \\
+         • 1-year database hosting
+     } & 1 & 500 & 500 \\
+     
+     5 & \parbox[t]{8cm}{
+         \textbf{Content Management \& Integration} \\
+         \vspace{0.2cm}
+         \textit{Includes:} \\
+         • Company information integration \\
+         • Service pages content development \\
+         • Image optimization and integration \\
+         • Contact information setup \\
+         • SEO content optimization
+     } & 1 & 1,000 & 1,000 \\
+    
+    \bottomrule
+\end{tabularx}
+
+\vspace{0.5cm}
+
+% ===== Invoice Summary =====
+\begin{tabularx}{\textwidth}{@{}Xr@{}}
+    & \\[-0.3cm]
+    \multicolumn{2}{r}{
+         \begin{tabular}{@{}lr@{}}
+             \textbf{Service Fee:} & \textbf{KES 5,000} \\
+             \textbf{Additional Services:} & \textbf{KES 4,000} \\
+             \midrule
+             \textbf{\color{primaryBlue}\Large Total Amount Due:} & \textbf{\color{primaryBlue}\Large KES 9,000} \\
+         \end{tabular}
+    } \\
+\end{tabularx}
+
+\vspace{1cm}
+
+% ===== Payment Instructions =====
+\begin{paymentbox}
+    \textbf{\color{successGreen}\Large \faMoneyBillWave \quad PAYMENT INSTRUCTIONS} \\
+    \vspace{0.4cm}
+    
+    Please remit payment using the bank transfer details below: \\
+    \vspace{0.4cm}
+    
+    \begin{tabularx}{\textwidth}{@{}lX@{}}
+        \textbf{\faCreditCard \quad Bank Transfer:} & \\
+        \textbf{Bank Name:} & NCBA Bank \\
+        \textbf{Account Name:} & Alfred Mulinge Maweu \\
+        \textbf{Account Number:} & 9511840014 \\
+        \textbf{Currency:} & KES (Kenyan Shillings) \\
+         \textbf{Amount Due:} & \textbf{KES 9,000} \\
+        \vspace{0.3cm}
+        
+        
+        \textbf{\faEnvelope \quad Payment Confirmation:} & \\
+        \textbf{Email:} & binfred.ke@gmail.com \\
+        \textbf{Subject:} & Payment Confirmation - Invoice \#EAL-2024-\the\month\the\day-001 \\
+    \end{tabularx}
+    
+     \vspace{0.5cm}
+     
+     \textbf{Note:} This invoice includes domain purchase, hosting setup, and database configuration services provided as part of the complete website package.
+\end{paymentbox}
+
+% ===== Terms and Conditions =====
+\section*{\color{primaryBlue}TERMS AND CONDITIONS}
+
+\begin{itemize}
+    \item All prices are exclusive of VAT unless otherwise stated
+    \item 1 month post-launch support included at no additional cost
+    \item Additional modifications beyond the original scope will be quoted separately
+    \item Full payment required before domain and hosting transfer
+\end{itemize}
+
+\vspace{0.5cm}
+
+% ===== Contact Information ==
+\begin{center}
+    \textbf{\color{primaryBlue}For any questions regarding this invoice, please contact:} \\
+    \vspace{0.3cm}
+    \textbf{Alfred Mulinge Maweu} \\
+    \textbf{Email:} binfred.ke@gmail.com \\
+    \textbf{Phone:} +254 700 861 129 \\
+    \textbf{Website:} \href{https://eliteadvisoryltd.com/}{https://eliteadvisoryltd.com/}
+\end{center}
+
+\end{document}

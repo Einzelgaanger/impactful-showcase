@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Logo from '@/components/Logo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -34,12 +35,10 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-lg accent-gradient flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-lg">C</span>
-              </div>
+              <Logo size="sm" />
               <div>
-                <h3 className="text-lg font-bold">CompanyName</h3>
-                <p className="text-xs text-primary-foreground/80">Excellence in Business Solutions</p>
+                <h3 className="text-lg font-bold">Elite Advisory Limited</h3>
+                <p className="text-xs text-primary-foreground/80">Partnerships Based on Trust</p>
               </div>
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
@@ -100,27 +99,27 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-accent flex-shrink-0" />
                 <a 
-                  href="mailto:info@company.com" 
+                  href="mailto:eliteadvisory@outlook.com" 
                   className="text-primary-foreground/80 hover:text-accent transition-colors duration-300 text-sm"
                 >
-                  info@company.com
+                  eliteadvisory@outlook.com
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-accent flex-shrink-0" />
                 <a 
-                  href="tel:+1234567890" 
+                  href="tel:+254100169211" 
                   className="text-primary-foreground/80 hover:text-accent transition-colors duration-300 text-sm"
                 >
-                  +1 (234) 567-8900
+                  +254 100 169 211
                 </a>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                 <address className="text-primary-foreground/80 text-sm not-italic">
-                  123 Business Avenue<br />
-                  Suite 100<br />
-                  Business City, BC 12345
+                  Nairobi, Kenya<br />
+                  Headquarters<br />
+                  Established May 2019
                 </address>
               </div>
             </div>
@@ -131,7 +130,7 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-primary-foreground/80 text-sm">
-              © {currentYear} CompanyName. All rights reserved.
+              © {currentYear} Elite Advisory Limited. All rights reserved.
             </p>
             <div className="flex space-x-6">
               {footerLinks.support.map((link) => (

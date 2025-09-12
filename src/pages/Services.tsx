@@ -21,51 +21,51 @@ import {
 const Services = () => {
   const mainServices = [
     {
-      icon: Shield,
-      title: 'Management Consultancy Services',
-      description: 'Comprehensive strategic guidance to optimize operations, enhance efficiency, and drive sustainable business growth.',
-      features: ['Strategic Planning', 'Process Optimization', 'Change Management', 'Performance Enhancement'],
-      link: '/services/management-consultancy',
+      icon: Settings,
+      title: 'Construction Works',
+      description: 'Comprehensive building works, electrical & mechanical engineering, roads, water, and civil projects.',
+      features: ['Building Works', 'Electrical Engineering', 'Mechanical Engineering', 'Civil Projects'],
+      link: '#construction',
       gradient: 'primary-gradient'
     },
     {
-      icon: Award,
-      title: 'ISO Standards Implementation',
-      description: 'Expert certification services for ISO 9001, ISO 14001, ISO 45001, and other international quality standards.',
-      features: ['ISO 9001 Quality Management', 'ISO 14001 Environmental', 'ISO 45001 Safety', 'Certification Support'],
-      link: '/services/iso-standards',
+      icon: Shield,
+      title: 'Management Consultancy',
+      description: 'ISO systems development, strategy, risk management, governance, and capacity building solutions.',
+      features: ['ISO Systems', 'Strategic Planning', 'Risk Management', 'Capacity Building'],
+      link: '#consultancy',
       gradient: 'accent-gradient'
     },
     {
       icon: BarChart3,
-      title: 'Operations & Quality Auditing',
-      description: 'Data-driven auditing solutions for compliance verification, risk assessment, and continuous improvement.',
-      features: ['Internal Audits', 'Compliance Assessment', 'Risk Management', 'Performance Analytics'],
-      link: '/services/quality-auditing',
+      title: 'ICT Solutions',
+      description: 'Supply of ICT equipment, accessories, and comprehensive technology services for modern businesses.',
+      features: ['ICT Equipment', 'Technology Services', 'System Integration', 'Technical Support'],
+      link: '#ict',
       gradient: 'primary-gradient'
     },
     {
-      icon: TrendingUp,
-      title: 'Regulatory Compliance',
-      description: 'Navigate complex regulatory requirements across industries with expert guidance and implementation support.',
-      features: ['Regulatory Assessment', 'Compliance Framework', 'Documentation', 'Training Programs'],
-      link: '/services/regulatory-compliance',
+      icon: Target,
+      title: 'Office Solutions',
+      description: 'Complete office furniture, stationery, printing supplies, equipment, printers, toners, and papers.',
+      features: ['Office Furniture', 'Stationery Supplies', 'Printing Equipment', 'Office Accessories'],
+      link: '#office',
       gradient: 'accent-gradient'
     },
     {
-      icon: Target,
-      title: 'Strategic Planning',
-      description: 'Future-focused planning methodologies to position your organization for long-term success and growth.',
-      features: ['Vision Development', 'Market Analysis', 'Goal Setting', 'Implementation Roadmap'],
-      link: '/services/strategic-planning',
+      icon: TrendingUp,
+      title: 'Automotive Supplies',
+      description: 'Quality spare parts, accessories, and comprehensive support for all automotive needs.',
+      features: ['Spare Parts', 'Automotive Accessories', 'Vehicle Maintenance', 'Supply Chain'],
+      link: '#automotive',
       gradient: 'primary-gradient'
     },
     {
       icon: Users,
-      title: 'Capacity Building',
-      description: 'Comprehensive training and development programs to enhance organizational capabilities and performance.',
-      features: ['Skills Development', 'Leadership Training', 'Team Building', 'Knowledge Transfer'],
-      link: '/services/capacity-building',
+      title: 'Corporate Branding',
+      description: 'Professional branded merchandise, custom t-shirts, and high-quality company staff uniforms.',
+      features: ['Branded Merchandise', 'Corporate T-Shirts', 'Staff Uniforms', 'Brand Identity'],
+      link: '#branding',
       gradient: 'accent-gradient'
     }
   ];

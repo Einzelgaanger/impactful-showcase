@@ -58,8 +58,8 @@ const Header = () => {
               <span className="text-accent-foreground font-bold text-xl">C</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">CompanyName</h1>
-              <p className="text-xs text-muted-foreground">Excellence in Business Solutions</p>
+              <h1 className="text-xl font-bold text-foreground">Elite Advisory Limited</h1>
+              <p className="text-xs text-muted-foreground">Practical Solutions for Lasting Value</p>
             </div>
           </Link>
 

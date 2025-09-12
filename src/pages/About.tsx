@@ -20,34 +20,29 @@ import {
 const About = () => {
   const coreValues = [
     {
+      icon: Users,
+      title: 'Customer Focus',
+      description: 'Our clients are at the center of everything we do. We understand their unique needs and deliver solutions that create real value.'
+    },
+    {
       icon: Shield,
       title: 'Integrity',
-      description: 'We conduct business with the highest ethical standards, ensuring transparency and honesty in all our interactions.'
+      description: 'We operate with the highest ethical standards, building trust through transparency, honesty, and consistent performance.'
     },
     {
       icon: Award,
-      title: 'Excellence',
-      description: 'We strive for exceptional quality in every project, delivering solutions that exceed client expectations.'
-    },
-    {
-      icon: Lightbulb,
-      title: 'Innovation',
-      description: 'We embrace cutting-edge methodologies and creative problem-solving to drive continuous improvement.'
+      title: 'Professionalism',
+      description: 'We maintain the highest professional standards in all our interactions, delivering excellence in every engagement.'
     },
     {
       icon: Users,
-      title: 'Collaboration',
-      description: 'We believe in the power of teamwork, fostering partnerships that create lasting value for all stakeholders.'
-    },
-    {
-      icon: Globe,
-      title: 'Sustainability',
-      description: 'We are committed to responsible business practices that benefit society and the environment.'
+      title: 'Team Work',
+      description: 'We believe in the power of collaboration, working together to achieve exceptional results for our clients.'
     },
     {
       icon: TrendingUp,
-      title: 'Growth',
-      description: 'We empower organizations and individuals to achieve their full potential through strategic development.'
+      title: 'Continuous Improvement',
+      description: 'We are committed to continuous learning, innovation, and improvement in all aspects of our business.'
     }
   ];
 
@@ -70,14 +65,14 @@ const About = () => {
               <Badge variant="outline" className="border-accent text-accent mb-6">
                 About Our Company
               </Badge>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Excellence Through
-                <span className="block heading-gradient mt-2">Strategic Partnership</span>
-              </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                For over 15 years, we've been helping organizations achieve operational excellence, 
-                regulatory compliance, and sustainable growth through expert consulting and innovative solutions.
-              </p>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              About
+              <span className="block heading-gradient mt-2">Elite Advisory Limited</span>
+            </h1>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Dynamic and diversified company committed to delivering practical solutions that create real impact. 
+              Established in May 2019 and incorporated under the Companies Act, 2019.
+            </p>
             </div>
           </div>
         </section>
@@ -96,9 +91,9 @@ const About = () => {
                     <h2 className="text-3xl font-bold">Our Mission</h2>
                   </div>
                   <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                    To empower businesses worldwide by providing exceptional consulting services, strategic guidance, 
-                    and innovative solutions that drive sustainable growth, operational excellence, and competitive advantage 
-                    in an ever-evolving global marketplace.
+                    To provide practical solutions that help organizations improve, grow, and create lasting value. 
+                    We combine technical expertise, professional consultancy, and strong supply chain capabilities 
+                    to ensure quality delivery that consistently meets — and often exceeds — expectations.
                   </p>
                   <div className="flex items-center space-x-2 text-accent">
                     <CheckCircle className="h-5 w-5" />
@@ -117,9 +112,9 @@ const About = () => {
                     <h2 className="text-3xl font-bold">Our Vision</h2>
                   </div>
                   <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                    To be the globally recognized leader in business consulting and quality management, 
-                    setting the standard for excellence and innovation while creating lasting value for our clients, 
-                    communities, and stakeholders worldwide.
+                    To be a trusted partner in driving sustainable growth, excellence, and transformative value 
+                    across industries worldwide. We envision being the partner of choice for lasting success, 
+                    delivering quality and exceeding expectations in every engagement.
                   </p>
                   <div className="flex items-center space-x-2 text-accent">
                     <CheckCircle className="h-5 w-5" />
@@ -183,25 +178,24 @@ const About = () => {
               <div className="space-y-8 animate-fade-in-up">
                 <div className="prose prose-lg max-w-none text-muted-foreground">
                   <p className="text-xl leading-relaxed mb-6">
-                    Founded in 2008 with a vision to transform how businesses approach quality management and 
-                    strategic planning, our company has grown from a small consultancy into a globally recognized 
-                    leader in business excellence.
+                    Elite is a dynamic and diversified company committed to delivering practical solutions that create real impact. 
+                    Established in May 2019 and incorporated under the Companies Act, 2019, we have grown into a trusted partner 
+                    for both government and private sector clients.
                   </p>
                   <p className="text-lg leading-relaxed mb-6">
-                    Our journey began when our founders recognized the critical gap between traditional consulting 
-                    approaches and the dynamic needs of modern organizations. We pioneered innovative methodologies 
-                    that combine strategic thinking with practical implementation, ensuring our clients achieve 
-                    sustainable results.
+                    What sets us apart is our ability to understand each client's unique needs and respond with innovative, 
+                    cost-effective, and timely solutions. We combine technical expertise, professional consultancy, and strong 
+                    supply chain capabilities to ensure quality delivery that consistently meets — and often exceeds — expectations.
                   </p>
                   <p className="text-lg leading-relaxed mb-6">
-                    Today, we serve organizations across 25 countries, from emerging startups to Fortune 500 companies, 
-                    helping them navigate complex regulatory environments, implement world-class quality systems, 
-                    and achieve operational excellence that drives competitive advantage.
+                    At Elite, we believe success is built on trust, integrity, and consistent performance. We go beyond simply 
+                    providing products or services — we create long-term value that empowers our clients to achieve their goals 
+                    with confidence.
                   </p>
                   <p className="text-lg leading-relaxed">
-                    Our commitment to innovation, integrity, and client success continues to drive everything we do. 
-                    As we look to the future, we remain dedicated to empowering businesses worldwide to achieve 
-                    their highest potential.
+                    Our focus is simple yet powerful: deliver quality, exceed expectations, and remain the partner of choice for 
+                    lasting success. From construction works to management consultancy, we provide comprehensive solutions that 
+                    transform businesses and drive exceptional results.
                   </p>
                 </div>
               </div>

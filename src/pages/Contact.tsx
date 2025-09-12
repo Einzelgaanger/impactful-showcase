@@ -22,29 +22,29 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: 'info@company.com',
-      subtitle: 'sales@company.com',
-      action: 'mailto:info@company.com'
+      details: 'eliteadvisory@outlook.com',
+      subtitle: 'Professional Consultation',
+      action: 'mailto:eliteadvisory@outlook.com'
     },
     {
       icon: Phone,
       title: 'Call Us',
-      details: '+1 (234) 567-8900',
-      subtitle: '+1 (234) 567-8901',
-      action: 'tel:+1234567890'
+      details: '+254 100 169 211',
+      subtitle: 'Available for Consultations',
+      action: 'tel:+254100169211'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      details: '123 Business Avenue',
-      subtitle: 'Suite 100, Business City, BC 12345',
+      details: 'Elite Advisory Limited',
+      subtitle: 'Nairobi, Kenya',
       action: '#'
     },
     {
       icon: Clock,
-      title: 'Business Hours',
-      details: 'Mon - Fri: 9:00 AM - 6:00 PM',
-      subtitle: 'Sat: 10:00 AM - 2:00 PM',
+      title: 'Established',
+      details: 'May 2019',
+      subtitle: 'Companies Act 2019 Incorporated',
       action: '#'
     }
   ];
@@ -81,12 +81,12 @@ const Contact = () => {
                 Contact Us
               </Badge>
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Let's Start Your
-                <span className="block heading-gradient mt-2">Transformation Journey</span>
+                Contact
+                <span className="block heading-gradient mt-2">Elite Advisory Limited</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Ready to elevate your business? Our expert consultants are here to discuss your needs 
-                and design a customized solution that drives real results.
+                Ready to partner with us? Our expert team is here to discuss your needs and design 
+                customized solutions that create lasting value for your organization.
               </p>
             </div>
           </div>
@@ -142,12 +142,12 @@ const Contact = () => {
                           className="w-full h-11 px-3 py-2 border border-input bg-background rounded-md text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                         >
                           <option value="">Select a service</option>
+                          <option value="construction-works">Construction Works</option>
                           <option value="management-consultancy">Management Consultancy</option>
-                          <option value="iso-standards">ISO Standards</option>
-                          <option value="quality-auditing">Quality Auditing</option>
-                          <option value="regulatory-compliance">Regulatory Compliance</option>
-                          <option value="strategic-planning">Strategic Planning</option>
-                          <option value="capacity-building">Capacity Building</option>
+                          <option value="ict-solutions">ICT Solutions</option>
+                          <option value="office-solutions">Office Solutions</option>
+                          <option value="automotive-supplies">Automotive Supplies</option>
+                          <option value="corporate-branding">Corporate Branding</option>
                         </select>
                       </div>
                       

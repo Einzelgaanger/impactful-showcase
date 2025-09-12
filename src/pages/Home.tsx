@@ -22,39 +22,39 @@ const Home = () => {
   const services = [
     {
       icon: Shield,
-      title: 'Management Consultancy',
-      description: 'Strategic guidance and expertise to optimize your business operations and drive sustainable growth.',
-      link: '/services/management-consultancy'
+      title: 'Construction Works',
+      description: 'Building works, electrical & mechanical engineering, roads, water, and civil projects.',
+      link: '/services'
     },
     {
       icon: Award,
-      title: 'ISO Standards Implementation',
-      description: 'Comprehensive ISO certification services to enhance quality, safety, and operational excellence.',
-      link: '/services/iso-standards'
+      title: 'Management Consultancy',
+      description: 'ISO systems, strategy, risk, governance, and capacity building solutions.',
+      link: '/services'
     },
     {
       icon: BarChart3,
-      title: 'Quality Auditing',
-      description: 'Data-driven auditing solutions to ensure compliance and identify improvement opportunities.',
-      link: '/services/quality-auditing'
+      title: 'ICT Solutions',
+      description: 'Supply of ICT equipment, accessories, and related technology services.',
+      link: '/services'
     },
     {
       icon: Target,
-      title: 'Strategic Planning',
-      description: 'Future-focused planning strategies to position your business for long-term success.',
-      link: '/services/strategic-planning'
+      title: 'Office Solutions',
+      description: 'Furniture, stationery, printing supplies, equipment, printers, toners, and papers.',
+      link: '/services'
     },
     {
       icon: TrendingUp,
-      title: 'Regulatory Compliance',
-      description: 'Expert guidance to navigate complex regulatory requirements and maintain full compliance.',
-      link: '/services/regulatory-compliance'
+      title: 'Automotive Supplies',
+      description: 'Spare parts, accessories, and comprehensive automotive support solutions.',
+      link: '/services'
     },
     {
       icon: Users,
-      title: 'Capacity Building',
-      description: 'Comprehensive training and development programs to enhance your team capabilities.',
-      link: '/services/capacity-building'
+      title: 'Corporate Branding',
+      description: 'Branded merchandise, t-shirts, and company staff uniforms.',
+      link: '/services'
     }
   ];
 
@@ -82,10 +82,10 @@ const Home = () => {
   ];
 
   const stats = [
-    { number: '500+', label: 'Successful Projects' },
-    { number: '98%', label: 'Client Satisfaction' },
-    { number: '15+', label: 'Years Experience' },
-    { number: '50+', label: 'Expert Consultants' }
+    { number: '2019', label: 'Established & Incorporated' },
+    { number: '160+', label: 'ISO Countries Supported' },
+    { number: '100%', label: 'Client-First Approach' },
+    { number: '10+', label: 'Service Categories' }
   ];
 
   return (
@@ -106,15 +106,15 @@ const Home = () => {
         <div className="relative z-10 container-custom text-center text-white">
           <div className="max-w-4xl mx-auto animate-fade-in-up">
             <Badge variant="outline" className="border-accent text-accent mb-6 text-sm px-4 py-2">
-              Excellence in Business Solutions
+              Elite Advisory Limited
             </Badge>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Transform Your Business with
-              <span className="block heading-gradient mt-2">Expert Consultancy</span>
+              Practical Solutions for
+              <span className="block heading-gradient mt-2">Lasting Value</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Empowering organizations through strategic consulting, quality management, and innovative solutions 
-              that drive sustainable growth and operational excellence.
+              Dynamic and diversified company delivering innovative, cost-effective solutions that create real impact 
+              for government and private sector clients since 2019.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button variant="hero" size="xl" asChild className="animate-pulse-glow">

@@ -17,15 +17,25 @@ const queryClient = new QueryClient();
 
 const App = () => {
   useEffect(() => {
-    // Register service worker for caching
+    // Conditionally manage service worker
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
-        .then((registration) => {
-          console.log('SW registered: ', registration);
-        })
-        .catch((registrationError) => {
-          console.log('SW registration failed: ', registrationError);
-        });
+      const enableSw = import.meta.env.VITE_ENABLE_SW === 'true';
+      if (enableSw) {
+        navigator.serviceWorker.register('/sw.js')
+          .then((registration) => {
+            console.log('SW registered: ', registration);
+          })
+          .catch((registrationError) => {
+            console.log('SW registration failed: ', registrationError);
+          });
+      } else {
+        // Proactively unregister existing service workers to avoid interference
+        navigator.serviceWorker.getRegistrations()
+          .then((registrations) => {
+            registrations.forEach((registration) => registration.unregister());
+          })
+          .catch(() => {});
+      }
     }
 
     // Start keep-alive service

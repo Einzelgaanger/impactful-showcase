@@ -12,9 +12,17 @@ services:
       - key: NPM_CONFIG_ENGINE_STRICT
         value: false
     headers:
+      # Do NOT cache HTML or service worker aggressively to avoid stale deploys
+      - path: /index.html
+        name: Cache-Control
+        value: no-cache, no-store, must-revalidate
+      - path: /sw.js
+        name: Cache-Control
+        value: no-cache, no-store, must-revalidate
+      # Static assets can be cached aggressively
       - path: /*
         name: Cache-Control
-        value: public, max-age=31536000, immutable
+        value: public, max-age=3600
       - path: /static/*
         name: Cache-Control
         value: public, max-age=31536000, immutable

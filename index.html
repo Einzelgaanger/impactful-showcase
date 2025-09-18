@@ -28,6 +28,14 @@
 
   <body>
     <div id="root"></div>
+    <script>
+      // Safety: ensure any old service worker is removed so users don't get a blank page
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations()
+          .then((regs) => Promise.all(regs.map((r) => r.unregister())))
+          .catch(() => {});
+      }
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

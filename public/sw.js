@@ -1,18 +1,14 @@
-const VERSION = 'v3';
-const RUNTIME_CACHE = `runtime-${VERSION}`;
-const ASSETS_CACHE = `assets-${VERSION}`;
+const VERSION = 'v4';
+const CACHE_NAME = `elite-advisory-${VERSION}`;
 
-const PRECACHE_URLS = [
-  '/',
-  '/index.html',
-  '/favicon.ico',
-  '/favicon.svg'
-];
-
+// Simple service worker that only handles navigation
 self.addEventListener('install', (event) => {
   self.skipWaiting();
   event.waitUntil(
-    caches.open(RUNTIME_CACHE).then((cache) => cache.addAll(PRECACHE_URLS))
+    caches.open(CACHE_NAME).then((cache) => {
+      // Only cache the main page
+      return cache.addAll(['/']);
+    })
   );
 });
 
@@ -22,7 +18,7 @@ self.addEventListener('activate', (event) => {
       const cacheNames = await caches.keys();
       await Promise.all(
         cacheNames
-          .filter((name) => ![RUNTIME_CACHE, ASSETS_CACHE].includes(name))
+          .filter((name) => name !== CACHE_NAME)
           .map((name) => caches.delete(name))
       );
       await self.clients.claim();
@@ -30,83 +26,37 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-function isSameOrigin(requestUrl) {
-  try {
-    const url = new URL(requestUrl);
-    return url.origin === self.location.origin;
-  } catch {
-    return false;
-  }
-}
-
-function isViteAsset(requestUrl) {
-  try {
-    const { pathname } = new URL(requestUrl);
-    return pathname.startsWith('/assets/');
-  } catch {
-    return false;
-  }
-}
-
 self.addEventListener('fetch', (event) => {
   const { request } = event;
 
-  if (request.method !== 'GET') return; // bypass non-GET
-
-  // Avoid touching cross-origin requests
-  if (!isSameOrigin(request.url)) return;
-
-  // App shell navigation: network-first with cache fallback
+  // Only handle navigation requests (page loads)
   if (request.mode === 'navigate') {
     event.respondWith(
       (async () => {
         try {
-          const fresh = await fetch('/index.html', { cache: 'no-cache' });
-          const cache = await caches.open(RUNTIME_CACHE);
-          cache.put('/index.html', fresh.clone());
-          return fresh;
-        } catch {
-          const cached = await caches.match('/index.html');
-          return cached || new Response('Offline', { status: 503 });
+          // Try to fetch fresh content
+          const response = await fetch(request);
+          if (response.ok) {
+            // Cache successful responses
+            const cache = await caches.open(CACHE_NAME);
+            cache.put(request, response.clone());
+          }
+          return response;
+        } catch (error) {
+          // If network fails, try cache
+          const cached = await caches.match('/');
+          if (cached) {
+            return cached;
+          }
+          // If no cache, return offline page
+          return new Response('Offline - Please check your connection', {
+            status: 503,
+            statusText: 'Service Unavailable'
+          });
         }
       })()
     );
-    return;
   }
-
-  // Vite hashed assets: stale-while-revalidate
-  if (isViteAsset(request.url)) {
-    event.respondWith(
-      (async () => {
-        const cache = await caches.open(ASSETS_CACHE);
-        const cached = await cache.match(request);
-        const networkFetch = fetch(request)
-          .then((response) => {
-            if (response.ok) {
-              cache.put(request, response.clone());
-            }
-            return response;
-          })
-          .catch(() => undefined);
-        return cached || (await networkFetch) || new Response('Offline', { status: 503 });
-      })()
-    );
-    return;
-  }
-
-  // Other same-origin GET: cache-first then network
-  event.respondWith(
-    (async () => {
-      const cached = await caches.match(request);
-      if (cached) return cached;
-      try {
-        const response = await fetch(request);
-        const cache = await caches.open(RUNTIME_CACHE);
-        if (response.ok) cache.put(request, response.clone());
-        return response;
-      } catch {
-        return new Response('Offline', { status: 503 });
-      }
-    })()
-  );
+  // For all other requests (assets, API calls, etc.), let the browser handle them normally
+  // This prevents the service worker from interfering with asset loading
 });
